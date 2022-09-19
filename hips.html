@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Diab-Liu</title>
+    <!--Referencing the CSS sheet and importing it-->
+    <link rel="stylesheet" href="styles3.css">
+    <script src="https://kit.fontawesome.com/668f49d614.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/pic5.JPG">
+</head>
+<body>
+    <!--Navbar Section-->
+    <section id="Home"></section>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html#Home" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#Contact" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="portfolio.html" class="button">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="header__section">
+        <h1>ACE-SPECTACULAR HIPS: CUSTOM HIP IMPLANT</h1>
+        <div class="modal-info">
+            <p style="color:#21D0B2;margin-top: 0.5rem;">November 2021 - December 2021</p><br>
+            <ul>
+              <li>ENGINEERING DESIGN</li>
+              <li>BIOMEDICAL DESIGN</li>
+              <li>SOFTWARE</li>
+              <li>3D MODELLING</li>
+            </ul>
+        </div>
+        <div class = "team">
+                <h1>Team Members: <a href="https://www.linkedin.com/in/alexdiab-liu/">Alexander Diab-Liu, </a>
+                    <a href="https://www.linkedin.com/in/dylan-pergentile-31b372213/"> Dylan Pergentile,</a>
+                    <a href="https://www.linkedin.com/in/leah-daniel-a3b121208/"> Leah Daniel,</a>
+                    <a href="https://www.linkedin.com/in/andrea-siroen/"> Andrea Siroen</a></h1>
+            <br>
+        </div>
+    </div>
+
+    <!--Carousel Slideshow-->
+    
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="hips-images\hips title.png" style="width:100%"><br><br><br><br>
+          <div class="text">Ace-Spectacular Hips Slide Deck Cover Page</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="hips-images\posterboard.png" style="width:100%"><br><br><br><br>
+          <div class="text">Patient Hip X-Ray</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="hips-images\Team25_DP2_Implantschematic.jpg" style="width:100%"><br><br><br><br>
+          <div class="text">Dissasembled 3D Model: Acetabular Extension, Acetabular Liner/Cup, Femoral Head, Femoral Stem</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script><br><br>
+
+
+
+
+    <!-- Description Section-->
+    <div class="outline">
+        <div class="outline__content1">
+            <h1>Summary</h1>
+            <br>
+            <p>The Ace-Spectacular Hips implant coupled with the recommended surgical fixation is the best course
+                 of action for the team’s case study patient. The bio-compatible materials and the sleek design of the implant will allow for the patient to 
+                experience a wider range of hip motion without pain.
+                <br><br>
+                To verify design parameters and to prove the functionality of the Ace-Spectacular Hips design, we created
+                a 3D modelled prototype in Autodesk Inventory and a program that validates certain key properties.</p>
+                
+        </div>
+        <div class="outline__content2">
+            <h1>Case Study</h1>
+            <br>
+            <p>We diagnosed our case study patient with Developmental Hip Dysplasia. Our patient was a man who has
+                 undergone several hip-related surgeries in the past and his been experiencing hip problems since 
+                 childhood. Recently, it has gotten to a point where he can no longer sit for over 15 minutes at a
+                  time and it is excruciatingly painful for him to exercise in any manner. Our team was tasked to 
+                  design a hip implant for our case study patient that will allow for him to return to the active 
+                  lifestyle he once enjoyed.</p>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="additonal_docs">
+            <h3>Additional Documentation:</h3><button><a href="https://github.com/alexdiabliu/DP2_Design_Configurations" target="_blank">Design Confirgurations Github</a></button>
+        </div>
+    <!--Footer Section-->
+    <div class="footer__container">
+        <section id="Contact"></section>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+                </div>
+                <p class="website__rights">alexdiabliu@gmail.com</p>
+                <div class="social__icons">
+                    <a href="https://www.linkedin.com/in/alexdiab-liu/" class="social__icon--link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+            </div>
+            
+
+
+    <!-- Calls javascript-->
+    <script src="app.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>

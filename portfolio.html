@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Diab-Liu</title>
+    <!--Referencing the CSS sheet and importing it-->
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://kit.fontawesome.com/668f49d614.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/pic5.JPG">
+</head>
+<body>
+    <!--Navbar Section-->
+    <section id="Home"></section>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html#Home" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#Contact" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="#Home" class="button">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="main">
+      <section id="Portfolio"></section>
+        <div class="main__container">
+            <div class="main__content">
+                <h1>PERSONAL</h1>
+                <h3>PROJECT</h3>
+                <h2>PORTFOLIO</h2>
+                <p>Engineering, Programming, Marketing</p>
+            </div>
+            <div class="main__img--container">
+                <img src="images/pic6.svg" alt="pic" id="main__img">
+            </div>
+        </div>
+    </div>
+    
+    <!--Services Section-->
+    <div class="services">
+        <br><br><br><br>
+        <h1>My Portfolio</h1>
+        <hr style="width:80%;text-align:center;margin-left:0">
+    <div class="container">
+        <ul class="filter-menu">
+            <li data-target="all">All</li>
+            <li data-target="engineering">Engineering</li>
+            <li data-target="programming">Programming</li>
+            <li data-target="biology">Biology</li>
+            <li data-target="marketing">Marketing</li>
+        </ul>
+        <section id="filterList">
+        <ul class="filter-item">
+            <li data-item="engineering"><a href="/vestomy.html"><img src="vestomy-images/vestomy.png" alt="">Vestomy: The Heavy-Duty Ostomy Belt</a></li>
+            <li data-item="engineering"><a href="hips.html"><img src="images/hips.png" alt=""></button>Ace-Spectacular Hips: Hip Implant</a></li>
+            <li data-item="engineering"><a href="thermosleeve.html"><img src="images/thermosleeve.jpg" alt=""></button>Thermosleeve: Neuromuscular Disorder Therapy</a></li>
+            <li data-item="engineering"><a href="onewheel.html"><img src="images/onewheel.png" alt=""></button>One-Wheel: One-Handed Wheelchair</a></li>
+            <li data-item="programming"><a href="mentis.html"><img src="images/mentis.png" alt=""></button>Mentis: Mental Health Chatbot</a></li>
+            <li data-item="programming"><a href="linkclicks.html"><img src="images/linkclicks.png" alt=""></button>LinkClicks: Ad Manager</a></li>
+            <li data-item="programming"><a href="werrv.html"><img src="images/werrv.png" alt=""></button>Werrv Inc: Scarcity Programming</a></li>
+            <li data-item="biology"><a href="synuclein.html"><img src="images/parkinsons.png" alt=""></button>𝛼-synuclein in Parkinson’s Disease</a></li>
+            <li data-item="biology"><a href="glaucoma.html"><img src="images/glaucoma.png" alt=""></button>Mechanotransduction in Glaucoma</a></li>
+            <li data-item="marketing"><a href="aleph.html"><img src="images/aleph.png" alt=""></button>Blog: A Digital Marketing Plan for Small Businesses</a></li>
+            <li data-item="marketing"><a href="deltahacks.html"><img src="images/deltahacks.png" alt=""></button>DeltaHacks: Promotional Video</a></li>
+            <li data-item="marketing"><a href="behaivior.html"><img src="images/behaivior.png" alt=""></button>Pregnant Women and Opioid Use Disorder: Behaivior</a></li>
+        </ul>
+        </section>
+    </div>
+    </div>
+    
+   <!--Footer Section-->
+   <div class="footer__container">
+    <section id="Contact"></section>
+    <div class="social__media">
+        <div class="social__media--wrap">
+            <div class="footer__logo">
+                <a href="/" id="footer__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+            </div>
+            <p class="website__rights">alexdiabliu@gmail.com</p>
+            <div class="social__icons">
+                <a href="https://www.linkedin.com/in/alexdiab-liu/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+        </div>
+  
+    <!-- Calls javascript-->
+    <script src="app.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>

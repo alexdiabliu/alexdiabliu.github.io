@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Diab-Liu</title>
+    <!--Referencing the CSS sheet and importing it-->
+    <link rel="stylesheet" href="styles3.css">
+    <script src="https://kit.fontawesome.com/668f49d614.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/pic5.JPG">
+</head>
+<body>
+    <!--Navbar Section-->
+    <section id="Home"></section>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html#Home" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#Contact" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="portfolio.html" class="button">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="header__section">
+        <h1>LINKCLICKS: AD MANAGER (LINKEDIN)</h1>
+        <div class="modal-info">
+            <p style="color:#21D0B2;margin-top: 0.5rem;">June 2022 - August 2022</p><br>
+            <ul>
+              <li>ENGINEERING DESIGN</li>
+              <li>SOFTWARE</li>
+            </ul>
+        </div>
+        <div class = "team">
+                <h1>Team Members: <a href="https://www.linkedin.com/in/alexdiab-liu/">Alexander Diab-Liu</a></h1>
+            <br>
+        </div>
+    </div>
+
+    <!--Carousel Slideshow-->
+    
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="/linkclicks-images/linkclicks copy.png" style="width:100%"><br><br><br><br>
+          <div class="text">LinkClicks Slide Deck</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="/linkclicks-images/linkclicks web.png" style="width:100%"><br><br><br><br>
+            <div class="text">Authentication Page of Website</div>
+          </div>
+     
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="/linkclicks-images/linkedin camp.png" style="width:100%"><br><br><br><br>
+            <div class="text">Where the Ad Campaigns will appear on LinkedIn</div>
+          </div>
+
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script><br><br>
+
+
+
+
+
+
+
+
+
+    <!-- Description Section-->
+    <div class="outline">
+        <div class="outline__content1">
+            <h1>Summary</h1>
+            <br>
+            <p>As a programmer for LinkClicks, I utilized the Django framework in Python in tandem with HTML, JSON, and SQLite3 
+                to create an external campaign manager for LinkedIn. First, user authentication is required, and the access/refresh 
+                tokens are saved to the company database for future reference. Next, the user inputs various parameters for the POST
+                request which are then processed in the views functions. At that point, the program connects to the LinkedIn API and 
+                subsequently creates a campaign group.
+                <br><br>
+                Note: For any general questions about the project or my code, please reach out to me at alexdiabliu@gmail.com. 
+                The GitHub Repository linked below is not functional as the authentic code contains confidential company access codes.
+        </div>
+        <div class="outline__content2">
+            <h1>Future Modifications</h1>
+            <br>
+            <p>Moving forward, I will be working on expanding this application to encompass campaigns and ads, as well as 
+                retrieving their analytic data from LinkedIn for the user's benefit.
+                <br><br>
+                This application will work in tandem with similar programs for Google, Facebook, Snapchat, Tiktok, etc to 
+                create an all-inclusive ads manager for all social medias.
+            </p>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="additonal_docs">
+        <h3>Additional Documentation:</h3>
+        <button><a href="https://github.com/alexdiabliu/LinkedIn-Campaign-Group-Creator" target = "_blank">Github</a></button>
+    </div>
+
+    <!--Footer Section-->
+    <div class="footer__container">
+        <section id="Contact"></section>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+                </div>
+                <p class="website__rights">alexdiabliu@gmail.com</p>
+                <div class="social__icons">
+                    <a href="https://www.linkedin.com/in/alexdiab-liu/" class="social__icon--link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+            </div>
+
+
+    <!-- Calls javascript-->
+    <script src="app.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>
