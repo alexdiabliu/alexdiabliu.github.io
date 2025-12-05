@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Diab-Liu</title>
+    <!--Referencing the CSS sheet and importing it-->
+    <link rel="stylesheet" href="styles3.css">
+    <script src="https://kit.fontawesome.com/668f49d614.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/pic5.JPG">
+
+    <!-- Reflection overrides -->
+    <style>
+      body {
+        color: #ffffff;              /* make all text white */
+      }
+
+      .reflection__section {
+        padding: 1.5rem 0.75rem;     /* tighter vertical + horizontal padding */
+      }
+
+      .reflection__container {
+        max-width: 900px;            /* readable width */
+        margin: 0 auto;              /* center container */
+      }
+
+      .reflection__container h2,
+      .reflection__container h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .reflection__container p {
+        margin-bottom: 0.6rem;       /* tighter paragraph spacing */
+        line-height: 1.4;            /* still readable */
+      }
+    </style>
+</head>
+<body>
+    <!--Navbar Section-->
+    <section id="Home"></section>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html#Home" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#Contact" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="portfolio.html" class="button">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="header__section">
+        <h1>A MULTILINGUAL PHYSIOTHERAPY PLATFORM FOR THE RCC</h1>
+        <div class="modal-info">
+            <p style="color:#21D0B2;margin-top: 0.5rem;">September 2025 - December 2025</p><br>
+            <ul>
+              <li>ENGINEERING</li>
+            </ul>
+        </div>
+        <div class="team">
+            <h1>Team Members: <a href="https://www.linkedin.com/in/alexdiab-liu/">Alexander Diab-Liu, </a>
+                <a href="https://www.linkedin.com/in/jessica-bonanno-395030260/"> Jessica Bonanno,</a>
+                <a href="https://www.linkedin.com/in/sanna-ghai/">Sanna Ghai,</a>
+                <a href="https://www.linkedin.com/in/erin-herzstein-265220200/">Erin Herzstein,</a>
+                <a href="https://www.linkedin.com/in/gloria-cimpu/">Gloria Cimpu</a>
+            <br>
+        </div>
+    </div>
+
+    <!--Carousel Slideshow-->
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 1</div>
+        <img src="/consulting-images/poster.png" style="width:100%"><br><br><br><br>
+        <div class="text">Poster Presentation</div>
+      </div>
+
+   
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+          
+    </div>
+          
+
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        if (dots[slideIndex-1]) {
+          dots[slideIndex-1].className += " active";
+        }
+      }
+    </script>
+    <br><br>
+
+
+
+  <section id="project-narrative" class="reflection__section">
+      <div class="reflection__container">
+          <h2>Project Overview</h2>
+          
+          <h3>Background & Objectives</h3>
+          <p>
+              The Rehabilitation Centre for Children (RCC) faces challenges delivering home exercise programs 
+              to families with limited English proficiency. Our objective was to design a solution that supports 
+              5+ languages, maintains a < Grade 6 reading level, and reduces interpreter reliance.
+          </p>
+
+          <h3>Analysis & Methodology</h3>
+          <p>
+              We evaluated three options: a custom app (AccessPhysio), adopting Physitrack, and a Do-Nothing approach. 
+              Using a critical path analysis (shown below), we determined a 35-week implementation timeline was feasible.
+          </p>
+          
+          <img src="/consulting-images/node.png" alt="Figure 1: Project Critical Path" style="width:100%; max-width:800px; display:block; margin: 1rem auto;">
+          <p class="caption">Figure 1: The project critical path identified a 35-week timeline focused on PHIA compliance.</p>
+
+          <h3>Recommendation</h3>
+          <p>
+              We recommend developing <strong>AccessPhysio</strong>. As seen in the Cash Flow Analysis below, 
+              while it requires upfront investment, it yields a positive Present Worth of $28,522 compared to 
+              Physitrack's negative return.
+          </p>
+
+          <img src="/consulting-images/cash.png" alt="Figure 2: Cash Flow Analysis" style="width:100%; max-width:800px; display:block; margin: 1rem auto;">
+          <p class="caption">Figure 2: Comparative cash flow analysis highlighting the long-term viability of the custom platform.</p>
+      </div>
+  </section>
+
+    <!-- ===================== -->
+    <!-- Course Reflection Section -->
+    <!-- ===================== -->
+    <section id="reflection" class="reflection__section">
+      <div class="reflection__container">
+        <h2>Course Reflection – IBEHS 4P03 Learning Portfolio</h2>
+
+        <p>
+          IBEHS 4P03 challenged me to move beyond purely technical problem-solving and think like a
+          consultant working within a real health-care system. Our team’s project focused on improving
+          access to pediatric physiotherapy instructions for families with limited English proficiency at the
+          Rehabilitation Centre for Children (RCC). Throughout the term, I learned how engineering
+          economics, project management, and stakeholder-centred design come together to support a
+          solution that is not only technically feasible, but also financially justifiable and socially impactful.
+        </p>
+
+        <h3>My Role and Contributions</h3>
+        <p>
+          Within the team, I took a leading role in the scalability, strategy and project management components
+          of the consulting report. I helped ideate methods to generate incoming cash flows for the proposed idea, ranging from external grants to licensing out the software to other clinics.
+          I also aided in constrating the custom-built multilingual rehabilitation platform against adopting Physitrack and the
+          do-nothing scenario in terms of feasibility and economies of scale, as it initially appeared as though Physitrack was more profitable. However this did not take into account the cheaper
+           costs became as the platform scaled in size. Numbers such as these helped the team interpret what those numbers meant for RCC’s decision-making. I also contributed to
+          developing the critical-path schedule, identifying which activities constrained the 35-week
+          implementation timeline and where there was slack that could be used for crashing. Overall, my greatest contribution was bringing together the specializations of all team members into a cohesive executive summary as a foundation for the final report.
+        </p>
+
+        <p>
+          Beyond the quantitative work, I contributed to writing and refining the consulting narrative so that
+          the recommendations were clear to non-technical readers. This meant translating concepts like
+          benefit–cost trade-offs, economies of scale, and capital–labour substitutions into intuitive language
+          that highlighted how the platform would actually change daily workflows for physiotherapists and
+          families. Collaborating with my teammates on the design description and recommendations pushed
+          me to think about how interface mockups, figures, and structured headings can reinforce a written
+          argument rather than just decorate it.
+        </p>
+
+        <h3>Skills and Learning from the Course</h3>
+        <p>
+          One of the biggest skills I developed in this course was the ability to link economic tools to real
+          design decisions. Before 4P03, concepts like present worth, MARR, and benefit–cost ratios felt
+          abstract, a distant memory from previous courses. Working through our own spreadsheet, I saw how small changes in assumptions about
+          interpreter usage or adherence rates could change whether a project looks attractive or risky. This
+          directly reinforced lecture content on uncertainty, sensitivity analysis, and public decision-making,
+          and helped me appreciate why assumptions must be clearly stated and justified rather than quietly
+          “baked into” calculations.
+        </p>
+
+        <p>
+          I also gained experience in formal project management. Building the node diagram and Gantt-style
+          schedule forced us to think carefully about dependencies, bottlenecks, and the difference between
+          labour-intensive and capital-intensive phases of the project. Seeing how Activities A, B, D, E, F, G,
+          H, L, and M formed the critical path made it clear that delays early in the requirements and
+          prototyping stages would cascade into much longer deployment times. This has made me much
+          more conscious of how I plan my own technical projects: getting alignment on scope early is not just
+          “nice to have”, it has direct schedule and cost implications.
+        </p>
+
+        <h3>Alternative Outcomes and What I Would Do Differently</h3>
+        <p>
+          Looking back, there are a few key areas where our team’s decisions could have led to different
+          outcomes. For example, we ultimately recommended the custom-built platform because it provided
+          the strongest long-term present worth and the most flexibility for RCC’s needs. If we had placed
+          more emphasis on short-term risk and implementation capacity, we might have leaned more heavily
+          on the Physitrack adoption scenario as the primary recommendation, framing the custom platform
+          as a longer-term “Phase 2” vision. That alternative would likely have reduced early development
+          risk but at the cost of control over features, language expansion, and long-term equity goals.
+        </p>
+
+        <p>
+          On a personal level, I would also approach the modelling process differently next time. Early in the
+          project, our team spent a lot of time refining the design narrative before fully locking in the economic
+          assumptions. In future projects, I would push to build a rough economic model earlier and run
+          simple sensitivity checks as we go. This would help us identify which parameters (for example,
+          interpreter wage rates or expected changes in adherence) actually drive the decision, and where
+          we need stronger justification or data. I also see opportunities to more actively integrate risk and
+          uncertainty tools – such as scenario analysis or break-even plots – into our main argument rather
+          than treating them as add-ons.
+        </p>
+
+        <h3>Impact on My Future Practice</h3>
+        <p>
+          Overall, IBEHS 4P03 has changed how I think about engineering work in health care. I now see
+          economic evaluation, social benefit considerations, and project management not as separate boxes,
+          but as interconnected lenses for judging whether a solution is truly viable. The project also showed
+          me how strong communication – through writing, visuals, and structured web content like this
+          portfolio – can help busy clinicians and stakeholders quickly understand why a recommendation
+          matters. These skills will directly carry into my future design courses, capstone projects, and
+          eventually into industry roles where engineering decisions must be justified to both technical and
+          non-technical audiences.
+        </p>
+      </div>
+    </section>
+
+    <!--Footer Section-->
+    <div class="footer__container">
+      <section id="Contact"></section>
+      <div class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><i class="fa-solid fa-computer"></i><pre>  A.K.D-L</pre></a>
+          </div>
+          <p class="website__rights">alexdiabliu@gmail.com</p>
+          <div class="social__icons">
+            <a href="https://www.linkedin.com/in/alexdiab-liu/" class="social__icon--link" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calls javascript-->
+    <script src="app.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>
