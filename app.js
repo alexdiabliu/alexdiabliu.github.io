@@ -53,3 +53,36 @@ if (open3 && modal_container3 && close3) {
         modal_container3.classList.remove('show');
     });
 }
+
+const detailPages = new Set([
+    "vestomy.html",
+    "hips.html",
+    "thermosleeve.html",
+    "onewheel.html",
+    "mentis.html",
+    "linkclicks.html",
+    "werrv.html",
+    "synuclein.html",
+    "glaucoma.html",
+    "aleph.html",
+    "deltahacks.html",
+    "behaivior.html",
+    "consulting.html",
+    "spatialmapping.html",
+    "smarthomeassistant.html",
+    "gpuperfmetrics.html",
+    "automaticcar.html",
+    "invoicemaker.html",
+    "movementclassifier.html"
+]);
+
+const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+if (detailPages.has(currentPage) && !document.querySelector(".project-back-wrap")) {
+    const footer = document.querySelector(".footer__container");
+    if (footer) {
+        const backWrap = document.createElement("div");
+        backWrap.className = "project-back-wrap";
+        backWrap.innerHTML = '<a class="project-back-link" href="portfolio.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>';
+        footer.parentNode.insertBefore(backWrap, footer);
+    }
+}

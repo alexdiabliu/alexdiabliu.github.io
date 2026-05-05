@@ -128,6 +128,60 @@ const projectsData = [
         categories: ["Software", "Engineering", "Biology", "IoT"],
         tags: ["TypeScript", "React", "Raspberry Pi", "IoT", "Healthcare", "Web Dev"],
         layout: "wide"
+    },
+    {
+        title: "Embedded 3D Spatial Mapping System",
+        description: "Real-time embedded system for spatial mapping and environment reconstruction workflows.",
+        href: "spatialmapping.html",
+        image: "images/pic6.svg",
+        categories: ["Engineering", "Software", "IoT", "Robotics"],
+        tags: ["C++", "Embedded", "Raspberry Pi", "Computer Vision", "Robotics", "IoT"],
+        layout: "wide"
+    },
+    {
+        title: "Smart Home Assistant",
+        description: "Automation-oriented smart home assistant integrating voice and device orchestration.",
+        href: "smarthomeassistant.html",
+        image: "images/pic6.svg",
+        categories: ["Software", "IoT", "Web Dev"],
+        tags: ["Python", "TypeScript", "IoT", "APIs", "Home Automation", "Web Dev"],
+        layout: "compact"
+    },
+    {
+        title: "GPU Performance Metrics (4H03)",
+        description: "GPU profiling and performance analysis toolkit for parallel computing coursework.",
+        href: "gpuperfmetrics.html",
+        image: "images/pic6.svg",
+        categories: ["Software", "Engineering"],
+        tags: ["C++", "Python", "CUDA", "Performance", "Systems", "Machine Learning"],
+        layout: "compact"
+    },
+    {
+        title: "Automatic Car",
+        description: "Autonomous vehicle control and sensing project with embedded intelligence loops.",
+        href: "automaticcar.html",
+        image: "images/pic6.svg",
+        categories: ["Engineering", "IoT", "Robotics"],
+        tags: ["C++", "Arduino", "Raspberry Pi", "Robotics", "Control Systems", "IoT"],
+        layout: "wide"
+    },
+    {
+        title: "InvoiceMaker",
+        description: "Invoice generation web tool for streamlined billing workflows and export automation.",
+        href: "invoicemaker.html",
+        image: "images/pic6.svg",
+        categories: ["Software", "Web Dev", "Marketing"],
+        tags: ["TypeScript", "React", "Tailwind CSS", "Web Dev", "Productivity", "APIs"],
+        layout: "compact"
+    },
+    {
+        title: "Movement Classifier",
+        description: "Human movement classification model and pipeline for sensor-driven activity prediction.",
+        href: "movementclassifier.html",
+        image: "images/pic6.svg",
+        categories: ["Software", "Machine Learning", "Biology"],
+        tags: ["Python", "Machine Learning", "Data Science", "Neuroscience", "Classification"],
+        layout: "compact"
     }
 ];
 
