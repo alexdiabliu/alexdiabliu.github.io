@@ -16,9 +16,9 @@ function initPortfolioFilters() {
         ? projectFilters
         : (Array.isArray(window.projectFilters) ? window.projectFilters : []);
 
-    const languageOptions = ["TypeScript", "Python", "Rust", "JavaScript", "C++"];
-    const frameworkOptions = ["Arduino", "React", "Raspberry Pi", "Tailwind CSS", "Django"];
-    const domainOptions = ["IoT", "Web Dev", "Machine Learning", "Robotics", "Biomedical", "Marketing", "Biology", "Engineering", "Software"];
+    const languageOptions = ["Python", "C", "C++"];
+    const frameworkOptions = ["Arduino", "Raspberry Pi"];
+    const domainOptions = ["Machine Learning", "Robotics", "Biomedical", "Software"];
 
     const globalFilters = [...new Set(["All", ...sourceFilters, ...languageOptions, ...frameworkOptions, ...domainOptions])];
     let activeFilter = "All";
