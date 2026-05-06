@@ -27,7 +27,7 @@ export function AboutMe() {
     },
     {
       title: 'Data & Machine Learning',
-      description: 'Applying data science and ML methods to classification, optimization, and performance analysis problems.',
+      description: 'Applying data science and Machine Learning methods to classification, optimization, and performance analysis problems.',
     },
     {
       title: 'Digital Marketing',
