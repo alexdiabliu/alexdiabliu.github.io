@@ -45,9 +45,9 @@ export function Home() {
       id: 'gpu-performance-metrics',
       title: 'GPU Temperature and Performance Optimization Analysis',
       description: 'Determining optimal performance-to-power efficiency given temperature constraints in high-performance GPUs.',
-      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU'],
+      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU', 'Artificial Intelligence', 'Data Science'],
       image: gpuImg,
-      year: '2024',
+      year: '2026',
       featured: true,
     },
     {
@@ -56,7 +56,7 @@ export function Home() {
       description: 'Real-time embedded system for spatial mapping and environment reconstruction workflows.',
       tags: ['Embedded C', 'Python', 'Robotics', 'Arm Cortex-M4'],
       image: spatialMappingImg,
-      year: '2024',
+      year: '2025',
     },
     {
       id: 'thermosleeve',
@@ -72,7 +72,7 @@ export function Home() {
       description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
       tags: ['Python', 'Machine Learning', 'Data Science', 'Human Activity Recognition'],
       image: movementClassifierImg,
-      year: '2024',
+      year: '2025',
     },
     {
       id: 'automatic-car',
@@ -88,7 +88,7 @@ export function Home() {
       description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
       tags: ['Python', 'Raspberry Pi', 'AWS', 'Automation'],
       image: smartHomeImg,
-      year: '2024',
+      year: '2025',
     },
     {
       id: 'invoicemaker',
@@ -96,7 +96,7 @@ export function Home() {
       description: 'Invoice generation web tool for streamlined billing workflows and export automation.',
       tags: ['Python', 'Automation'],
       image: invoicemakerImg,
-      year: '2024',
+      year: '2023',
     },
   ];
 
@@ -219,7 +219,10 @@ export function Home() {
             PERSONAL WEBSITE
           </p>
 
-          <h1 className="text-7xl tracking-tight" style={{ fontWeight: 400, letterSpacing: '-0.02em' }}>
+          <h1
+            className="text-8xl md:text-9xl tracking-tight"
+            style={{ fontWeight: 400, letterSpacing: '-0.02em', fontFamily: 'Rockwell, "Rockwell Nova", "Roboto Slab", serif' }}
+          >
             ALEX DIAB-LIU
           </h1>
 

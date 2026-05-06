@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { StarField } from '../components/StarField';
@@ -19,6 +19,9 @@ interface Project {
   tags: string[];
   year?: string;
   featured?: boolean;
+  repoUrl?: string;
+  pdfViewUrl?: string;
+  pdfSourceUrl?: string;
 }
 
 const projectData: Record<string, Project & { fullDescription: string; challenge: string; solution: string; results: string[]; images: string[] }> = {
@@ -41,97 +44,109 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
   },
   'spatial-mapping': {
     title: 'Embedded 3D Spatial Mapping System',
-    description: 'Real-time embedded system for spatial mapping and environment reconstruction workflows.',
-    tags: ['Embedded C', 'Python', 'Robotics', 'Arm Cortex-M4'],
+    description: 'Embedded 360-degree spatial scanner using ToF sensing, stepper control, and Open3D visualization.',
+    tags: ['Embedded C', 'UART', 'I2C', 'Open3D', 'MSP432E401Y'],
     year: '2024',
-    fullDescription: 'This project focuses on real-time 3D spatial mapping on embedded hardware. The system captures environment data, processes it through a lightweight reconstruction pipeline, and outputs structured spatial information for robotics and navigation use cases.',
-    challenge: 'The key difficulty was balancing reconstruction quality with latency and memory constraints on embedded targets while keeping data flow robust under variable sensor conditions.',
-    solution: 'I implemented a pipeline that combined embedded software modules with sensor-data processing for mapping. The stack was tuned for constrained compute environments while preserving useful reconstruction fidelity.',
+    repoUrl: 'https://github.com/alexdiabliu/Embedded-3D-Spatial-Mapping-System',
+    pdfViewUrl: 'https://github.com/alexdiabliu/Embedded-3D-Spatial-Mapping-System/blob/main/Final_Report_2DX3.pdf',
+    pdfSourceUrl: 'https://raw.githubusercontent.com/alexdiabliu/Embedded-3D-Spatial-Mapping-System/main/Final_Report_2DX3.pdf',
+    fullDescription: 'Built an embedded mapping system with a VL53L1X Time-of-Flight sensor and a stepper motor on an MSP432E401Y microcontroller. The scanner performs 360-degree sweeps, transmits data to a PC over UART, and generates 3D point-cloud visualizations using Open3D.',
+    challenge: 'The primary challenge was synchronizing sensor reads, motor movement, and serial output while maintaining reliable timing and scan quality on constrained embedded hardware.',
+    solution: 'Implemented a full embedded pipeline in C with GPIO-based control, UART/I2C integration, and PC-side parsing/visualization scripts. The scan flow supports start/stop controls and repeatable 3D reconstruction.',
     results: [
-      'Built an end-to-end embedded mapping workflow',
-      'Optimized execution for constrained hardware resources',
-      'Documented architecture and reproducible setup for future extensions',
-      'Established a foundation for navigation and SLAM-adjacent experiments',
+      'Delivered full microcontroller-to-PC 3D mapping workflow',
+      'Integrated VL53L1X ToF sensing with stepper-actuated scanning',
+      'Produced validated point-cloud maps from indoor scenes',
+      'Documented implementation and design in final technical report',
     ],
     images: [spatialMappingImg],
   },
   'smart-home-assistant': {
     title: 'Smart Home Assistant',
-    description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
-    tags: ['Python', 'Raspberry Pi', 'AWS', 'Automation'],
+    description: 'AI-powered voice assistant on Raspberry Pi with alarms, music, intent classification, and offline chat.',
+    tags: ['Python', 'Raspberry Pi', 'Whisper', 'SQLite', 'Ollama'],
     year: '2024',
-    fullDescription: 'A smart home orchestration platform designed to simplify cross-device control and automate recurring household tasks through a central assistant workflow.',
-    challenge: 'Major challenges included normalizing device capabilities across integrations, minimizing command latency, and handling partial third-party failures gracefully.',
-    solution: 'I combined API-driven services, backend automation logic, and web interfaces to coordinate commands, state changes, and event triggers across heterogeneous smart-home devices.',
+    repoUrl: 'https://github.com/alexdiabliu/smart-home-assistant',
+    fullDescription: 'SmartRise is a voice-driven bedside assistant built on Raspberry Pi 4 to reduce screen-heavy routines. It combines wake-word handling, speech recognition, intent classification, alarm scheduling, music playback, and local/offline chatbot support.',
+    challenge: 'Key challenges included building an end-to-end command loop that remained responsive on-device while coordinating STT, intent parsing, parameter extraction, and execution reliability.',
+    solution: 'Implemented a modular architecture with Whisper-based STT (AWS-hosted), pyttsx3 TTS, TF-IDF + SVM intent classification, spaCy parameter extraction, SQLite alarm management, and Ollama fallback chat.',
     results: [
-      'Implemented unified control workflows across multiple device types',
-      'Improved reliability through failure-aware command handling',
-      'Created an extendable automation architecture for new routines',
-      'Documented setup and architecture for reproducible deployment',
+      'Delivered working wake-word-to-action command pipeline',
+      'Enabled local alarm scheduling with persistent SQLite storage',
+      'Integrated offline-capable voice response and chatbot fallback',
+      'Shipped reproducible codebase with tests and modular components',
     ],
     images: [smartHomeImg],
   },
   'gpu-performance-metrics': {
     title: 'GPU Temperature and Performance Optimization Analysis',
-    description: 'Determining optimal performance-to-power efficiency given temperature constraints in high-performance GPUs.',
-    tags: ['Python', 'Machine Learning', 'Optimization', 'GPU'],
+    description: 'Data-driven GPU optimization using PCA, regression, and particle swarm optimization (PSO).',
+    tags: ['Python', 'Jupyter', 'PCA', 'Regression', 'PSO'],
     year: '2024',
-    fullDescription: 'This project investigates GPU compute behavior through targeted metric collection and analysis workflows to identify bottlenecks in parallel workloads and optimize performance-to-power tradeoffs.',
-    challenge: 'The challenge was extracting comparable metrics across runs, reducing measurement overhead, and validating optimization claims with repeatable benchmarks.',
-    solution: 'I combined analysis tooling with reproducible benchmark scripts to profile thermal behavior, throughput, and execution efficiency under varying operating conditions.',
+    repoUrl: 'https://github.com/alexdiabliu/gpu-perf-metrics-4H03/tree/main',
+    pdfViewUrl: 'https://github.com/alexdiabliu/gpu-perf-metrics-4H03/blob/main/CHEMENG4H03_FinalReport%20(3).pdf',
+    pdfSourceUrl: 'https://raw.githubusercontent.com/alexdiabliu/gpu-perf-metrics-4H03/main/CHEMENG4H03_FinalReport%20(3).pdf',
+    fullDescription: 'Conducted GPU performance analysis in a notebook-driven workflow using dimensionality reduction and optimization techniques. The project examines relationships between operating conditions and efficiency outcomes.',
+    challenge: 'The central challenge was identifying robust performance predictors and optimization paths from noisy multivariate data while avoiding overfitting.',
+    solution: 'Used PCA for feature reduction, regression modeling for trend estimation, and particle swarm optimization to search for improved operating points under thermal/performance constraints.',
     results: [
-      'Created a repeatable workflow for GPU performance analysis',
-      'Identified key tradeoffs between temperature and throughput',
-      'Produced benchmark-driven optimization recommendations',
-      'Improved clarity of performance bottlenecks in parallel workloads',
+      'Built reproducible analytics pipeline in Jupyter notebooks',
+      'Applied PCA + regression for interpretable performance modeling',
+      'Used PSO for optimization-oriented design exploration',
+      'Produced final report with results, plots, and conclusions',
     ],
     images: [gpuImg],
   },
   'automatic-car': {
     title: 'Engineering Competition Finalist: Miniature Automatic Car',
-    description: 'Autonomous vehicle control and sensing project with embedded intelligence loops.',
-    tags: ['C++', 'Arduino', 'Robotics', 'Automation'],
+    description: 'Arduino obstacle-avoiding robot with movement logging and return-to-start behavior.',
+    tags: ['Arduino', 'C++', 'Ultrasonic Sensors', 'Robotics'],
     year: '2024',
-    fullDescription: 'This autonomous car project explored embedded decision-making for navigation, obstacle awareness, and motion control under constrained hardware resources.',
-    challenge: 'Reliable sensing, low-latency control loops, and stable driving behavior under changing environmental conditions were core engineering constraints.',
-    solution: 'I integrated microcontroller control, sensor interfaces, and software logic for pathing and actuation so command logic translated into physical autonomous behavior.',
+    repoUrl: 'https://github.com/alexdiabliu/automatic-car',
+    fullDescription: 'Developed an autonomous miniature robot that navigates with three ultrasonic sensors and dual-motor control. The system detects nearby obstacles, chooses turn behavior, and tracks movement history for retracing.',
+    challenge: 'Needed robust obstacle handling and deterministic control on a simple Arduino stack while preserving enough state to execute return-to-start logic.',
+    solution: 'Implemented sensor polling, motor control, movement logging, and reverse-playback routines to let the robot navigate forward and then retrace to origin.',
     results: [
-      'Built a functional embedded autonomy prototype',
-      'Integrated sensing and control into a coherent vehicle stack',
-      'Improved responsiveness with lightweight decision logic',
-      'Reached finalist-level quality in engineering competition context',
+      'Integrated three-sensor obstacle detection into drive control loop',
+      'Added path logging and reverse replay for return-to-start',
+      'Delivered complete Arduino implementation and hardware pin mapping',
+      'Produced reliable autonomous behavior on constrained hardware',
     ],
     images: [automaticCarImg],
   },
   invoicemaker: {
     title: 'InvoiceMaker',
-    description: 'Invoice generation web tool for streamlined billing workflows and export automation.',
-    tags: ['Python', 'Automation'],
+    description: 'Python-based invoice generator that compiles stakeholder/task data into polished PDFs.',
+    tags: ['Python', 'ReportLab', 'OOP', 'PDF'],
     year: '2024',
-    fullDescription: 'InvoiceMaker is a productivity-focused web tool that simplifies invoice creation, formatting, and delivery for practical billing workflows.',
-    challenge: 'The primary challenge was balancing flexibility and speed while preserving clean output formatting and intuitive repeat-use flows.',
-    solution: 'I developed a lightweight invoicing workflow focused on fast entry, reliable formatting, and export-friendly outputs to support day-to-day operations.',
+    repoUrl: 'https://github.com/alexdiabliu/InvoiceMaker',
+    fullDescription: 'InvoiceMaker is a Python application that builds professional invoice PDFs from payer/payee and task-line data. The project emphasizes clean object-oriented design and reusable billing entities.',
+    challenge: 'The challenge was creating reusable invoice components while keeping the generated PDF layout readable and easy to customize for future use cases.',
+    solution: 'Implemented modular classes for stakeholders, tasks, and bill state, then used ReportLab-based rendering to produce printable and shareable invoice outputs.',
     results: [
-      'Reduced manual effort in recurring invoice preparation',
-      'Streamlined invoice formatting and delivery process',
-      'Enabled repeatable billing workflows for faster turnaround',
-      'Provided maintainable foundation for additional automation features',
+      'Generated complete invoice PDFs with line-item totals',
+      'Created modular OOP structure for maintainable billing logic',
+      'Enabled repeatable script-based invoice workflows',
+      'Documented setup and customization in project README',
     ],
     images: [invoicemakerImg],
   },
   'movement-classifier': {
     title: 'Movement Classifier',
-    description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
-    tags: ['Python', 'Machine Learning', 'Data Science', 'Human Activity Recognition'],
+    description: 'Raspberry Pi + Sense HAT HAR pipeline with SVM training and live on-device inference.',
+    tags: ['Python', 'scikit-learn', 'Sense HAT', 'SVM', 'HAR'],
     year: '2024',
-    fullDescription: 'This project builds a classification pipeline that predicts movement classes from recorded sensor signals, with a focus on reproducible model development and evaluation.',
-    challenge: 'Critical issues included feature quality, class imbalance, and maintaining generalization across varied movement samples and recording conditions.',
-    solution: 'I implemented a Python-based ML workflow for preprocessing, training, validation, and prediction analysis, iterating on features and models to improve robustness.',
+    repoUrl: 'https://github.com/alexdiabliu/movement-classifier',
+    pdfViewUrl: 'https://github.com/alexdiabliu/movement-classifier/blob/main/SVM%20HAR%20Paper.pdf',
+    pdfSourceUrl: 'https://raw.githubusercontent.com/alexdiabliu/movement-classifier/main/SVM%20HAR%20Paper.pdf',
+    fullDescription: 'Built a human activity recognition pipeline that records accelerometer data on Raspberry Pi Sense HAT, extracts windowed features, trains a multiclass linear SVM, and runs real-time inference on-device.',
+    challenge: 'Ensuring reliable classification under live sensor noise required careful feature-window design, dataset labeling discipline, and evaluation across multiple activity classes.',
+    solution: 'Implemented data collection scripts, feature extraction, scikit-learn training workflow, model serialization with joblib, and live classifier runtime that maps predictions to LED colors.',
     results: [
-      'Delivered a reproducible movement-classification baseline',
-      'Improved interpretability of model performance across classes',
-      'Built an end-to-end data processing and evaluation pipeline',
-      'Established a framework for future HAR model improvements',
+      'Achieved 94.32% held-out test accuracy in notebook evaluation',
+      'Delivered end-to-end data collection, training, and deployment flow',
+      'Enabled live Sense HAT activity feedback on-device',
+      'Packaged pretrained model and reproducible training assets',
     ],
     images: [movementClassifierImg],
   },
@@ -140,12 +155,19 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
 export function CaseStudy() {
   const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
+  const [showPdfEmbed, setShowPdfEmbed] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [projectId]);
 
+  useEffect(() => {
+    setShowPdfEmbed(false);
+  }, [projectId]);
+
   const project = projectId ? projectData[projectId] : null;
+  useEffect(() => {
+  }, [projectId, project]);
 
   if (!project) {
     return (
@@ -163,6 +185,10 @@ export function CaseStudy() {
       </div>
     );
   }
+
+  const embeddedPdfUrl = project.pdfSourceUrl
+    ? `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(project.pdfSourceUrl)}`
+    : null;
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
@@ -247,6 +273,45 @@ export function CaseStudy() {
                   ))}
                 </ul>
               </div>
+
+              {(project.repoUrl || project.pdfViewUrl) && (
+                <div>
+                  <h2 className="text-2xl tracking-tight mb-4">Project Resources</h2>
+                  <div className="flex flex-wrap gap-4 mb-6">
+                    {project.repoUrl && (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 text-xs font-mono tracking-wide border border-[var(--glow-blue)] text-[var(--glow-blue)]"
+                        style={{ borderRadius: '2px' }}
+                      >
+                        GitHub Repository
+                      </a>
+                    )}
+                    {project.pdfViewUrl && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowPdfEmbed(true);
+                        }}
+                        className="px-4 py-2 text-xs font-mono tracking-wide border border-[var(--border)] text-[var(--muted-foreground)] hover:border-[var(--glow-blue)] hover:text-[var(--foreground)]"
+                        style={{ borderRadius: '2px' }}
+                      >
+                        Open Technical PDF
+                      </button>
+                    )}
+                  </div>
+                  {showPdfEmbed && embeddedPdfUrl && (
+                    <iframe
+                      src={embeddedPdfUrl}
+                      title={`${project.title} PDF`}
+                      className="w-full h-[700px] border border-[var(--border)] bg-[var(--cosmos-panel)]"
+                      style={{ borderRadius: '2px' }}
+                    />
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="mt-16 pt-16 border-t border-[var(--border)] text-center">
