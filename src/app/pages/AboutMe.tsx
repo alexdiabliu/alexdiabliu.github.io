@@ -6,6 +6,7 @@ import { SectionContainer } from '../components/SectionContainer';
 import { CursorTrail } from '../components/CursorTrail';
 import taekwondoImg from '../../imports/taekwondo-team.png';
 import musicImg from '../../imports/music-production.png';
+import runningImg from '../../imports/running-marathon.png';
 
 export function AboutMe() {
   const navigate = useNavigate();
@@ -13,21 +14,6 @@ export function AboutMe() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
-
-  const interests = [
-    {
-      title: 'Taekwondo',
-      description: 'Active with the McMaster Taekwondo Team and motivated by disciplined training, teamwork, and competition.',
-    },
-    {
-      title: 'Running',
-      description: 'Training for endurance events, with a focus on long-distance goals including the Toronto Waterfront Marathon 2025.',
-    },
-    {
-      title: 'Music Production',
-      description: 'Producing and sharing original music projects as Alkami Music.',
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
@@ -98,29 +84,20 @@ export function AboutMe() {
             </div>
 
             <div className="mb-16">
-              <h2 className="text-3xl tracking-tight mb-12 text-center">Multidisciplinary Interests</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {interests.map((interest, i) => (
-                  <div
-                    key={i}
-                    className="border border-[var(--border)] p-6 bg-[var(--cosmos-panel)] hover:border-[var(--glow-blue)] transition-all duration-300"
-                    style={{ borderRadius: '2px' }}
-                  >
-                    <h3 className="text-lg mb-3 text-[var(--foreground)]">{interest.title}</h3>
-                    <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                      {interest.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-16">
               <h2 className="text-3xl tracking-tight mb-6 text-center">Outside of Work</h2>
               <p className="text-[var(--muted-foreground)] leading-relaxed text-center max-w-3xl mx-auto mb-10">
-                Outside engineering, I spend most of my time in three areas: Taekwondo with the McMaster Taekwondo Team, distance running with a goal toward the Toronto Waterfront Marathon 2025, and music production through my Alkami Music channel.
+                Outside engineering, I spend most of my time in Taekwondo with the McMaster Taekwondo Team, distance running with a goal toward the Toronto Waterfront Marathon 2025, and music production through my Alkami Music channel. I also help run content at{' '}
+                <a
+                  href="https://www.youtube.com/@TheNapUniversity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--glow-blue)] hover:underline"
+                >
+                  The Nap University
+                </a>
+                .
               </p>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
                 <div className="border border-[var(--border)] p-4 bg-[var(--cosmos-panel)]" style={{ borderRadius: '2px' }}>
                   <img
                     src={taekwondoImg}
@@ -130,6 +107,17 @@ export function AboutMe() {
                   />
                   <p className="text-sm text-[var(--muted-foreground)]">
                     Taekwondo competition day with the McMaster Taekwondo Team.
+                  </p>
+                </div>
+                <div className="border border-[var(--border)] p-4 bg-[var(--cosmos-panel)]" style={{ borderRadius: '2px' }}>
+                  <img
+                    src={runningImg}
+                    alt="Toronto Waterfront Marathon finish line photo"
+                    className="w-full h-72 object-cover mb-4"
+                    style={{ borderRadius: '2px' }}
+                  />
+                  <p className="text-sm text-[var(--muted-foreground)]">
+                    Post-race photo from the Toronto Waterfront Marathon journey.
                   </p>
                 </div>
                 <div className="border border-[var(--border)] p-4 bg-[var(--cosmos-panel)]" style={{ borderRadius: '2px' }}>

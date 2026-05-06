@@ -164,7 +164,27 @@ export function OrbitalTimeline({ experiences }: OrbitalTimelineProps) {
 
   return (
     <div className="relative py-24">
-      <div className="relative flex items-center justify-between px-8">
+      <div className="md:hidden space-y-6">
+        <div className="text-center font-mono text-xs tracking-wider text-[var(--muted-foreground)]">
+          2003
+        </div>
+        {experiences.slice(0, 4).map((exp, index) => (
+          <div
+            key={index}
+            className="border border-[var(--border)] bg-[var(--cosmos-panel)] p-5"
+            style={{ borderRadius: '2px' }}
+          >
+            <div className="font-mono text-xs text-[var(--muted-foreground)] tracking-wider mb-2">
+              {exp.year}
+            </div>
+            <h3 className="text-base text-[var(--foreground)]">{exp.role}</h3>
+            <p className="text-sm text-[var(--muted-foreground)] mb-3">{exp.company}</p>
+            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">{exp.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="relative hidden md:flex items-center justify-between px-8">
         <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px">
           <div
             className="w-full h-full"

@@ -22,6 +22,7 @@ interface Project {
   repoUrl?: string;
   pdfViewUrl?: string;
   pdfSourceUrl?: string;
+  videoEmbedUrl?: string;
 }
 
 const projectData: Record<string, Project & { fullDescription: string; challenge: string; solution: string; results: string[]; images: string[] }> = {
@@ -67,6 +68,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
     tags: ['Python', 'Raspberry Pi', 'Whisper', 'SQLite', 'Ollama'],
     year: '2024',
     repoUrl: 'https://github.com/alexdiabliu/smart-home-assistant',
+    videoEmbedUrl: 'https://drive.google.com/file/d/1xjQ_AtIRt9Aot3gjrQRl_ckbW8xgyLdE/preview',
     fullDescription: 'SmartRise is a voice-driven bedside assistant built on Raspberry Pi 4 to reduce screen-heavy routines. It combines wake-word handling, speech recognition, intent classification, alarm scheduling, music playback, and local/offline chatbot support.',
     challenge: 'Key challenges included building an end-to-end command loop that remained responsive on-device while coordinating STT, intent parsing, parameter extraction, and execution reliability.',
     solution: 'Implemented a modular architecture with Whisper-based STT (AWS-hosted), pyttsx3 TTS, TF-IDF + SVM intent classification, spaCy parameter extraction, SQLite alarm management, and Ollama fallback chat.',
@@ -166,8 +168,6 @@ export function CaseStudy() {
   }, [projectId]);
 
   const project = projectId ? projectData[projectId] : null;
-  useEffect(() => {
-  }, [projectId, project]);
 
   if (!project) {
     return (
@@ -196,7 +196,7 @@ export function CaseStudy() {
       <CursorTrail />
 
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[#000000]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-start">
           <button
             onClick={() => navigate('/')}
             className="flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
@@ -204,9 +204,6 @@ export function CaseStudy() {
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Back</span>
           </button>
-          <div className="font-mono text-xs tracking-widest uppercase text-[var(--foreground)]">
-            Case Study
-          </div>
         </div>
       </nav>
 
@@ -274,7 +271,7 @@ export function CaseStudy() {
                 </ul>
               </div>
 
-              {(project.repoUrl || project.pdfViewUrl) && (
+              {(project.repoUrl || project.pdfViewUrl || project.videoEmbedUrl) && (
                 <div>
                   <h2 className="text-2xl tracking-tight mb-4">Project Resources</h2>
                   <div className="flex flex-wrap gap-4 mb-6">
@@ -309,6 +306,19 @@ export function CaseStudy() {
                       className="w-full h-[700px] border border-[var(--border)] bg-[var(--cosmos-panel)]"
                       style={{ borderRadius: '2px' }}
                     />
+                  )}
+                  {project.videoEmbedUrl && (
+                    <div className="mt-8">
+                      <h3 className="text-lg tracking-tight mb-3">Demo Video</h3>
+                      <iframe
+                        src={project.videoEmbedUrl}
+                        title={`${project.title} demo video`}
+                        className="w-full h-[520px] border border-[var(--border)] bg-[var(--cosmos-panel)]"
+                        style={{ borderRadius: '2px' }}
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                      />
+                    </div>
                   )}
                 </div>
               )}

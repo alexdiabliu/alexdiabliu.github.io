@@ -45,50 +45,50 @@ export function Home() {
       id: 'gpu-performance-metrics',
       title: 'GPU Temperature and Performance Optimization Analysis',
       description: 'Determining optimal performance-to-power efficiency given temperature constraints in high-performance GPUs.',
-      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU', 'Artificial Intelligence', 'Data Science'],
+      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU', 'Artificial Intelligence', 'Big Data', 'Data Science'],
       image: gpuImg,
       year: '2026',
       featured: true,
     },
     {
+      id: 'smart-home-assistant',
+      title: 'Smart Home Assistant',
+      description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
+      tags: ['Python', 'Raspberry Pi', 'Machine Learning', 'Linux', 'SQL', 'AWS', 'Artificial Intelligence', 'Automation', 'Human Activity Recognition'],
+      image: smartHomeImg,
+      year: '2025',
+    },
+    {
       id: 'spatial-mapping',
       title: 'Embedded 3D Spatial Mapping System',
       description: 'Real-time embedded system for spatial mapping and environment reconstruction workflows.',
-      tags: ['Embedded C', 'Python', 'Robotics', 'Arm Cortex-M4'],
+      tags: ['Embedded C', 'Python', 'Microprocessor', 'UART', 'I2C', 'Visualization', 'Arm Cortex-M4'],
       image: spatialMappingImg,
+      year: '2025',
+    },
+    {
+      id: 'movement-classifier',
+      title: 'Movement Classifier',
+      description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
+      tags: ['Python', 'Raspberry Pi', 'Embedded Systems', 'Machine Learning', 'Sensors', 'Data Science', 'Human Activity Recognition'],
+      image: movementClassifierImg,
       year: '2025',
     },
     {
       id: 'thermosleeve',
       title: 'ThermoSleeve',
       description: 'Wearable neuromuscular therapy concept combining hardware and software biosignals.',
-      tags: ['Python', 'Raspberry Pi', 'Biomedical', 'Embedded Systems'],
+      tags: ['Python', 'Raspberry Pi', 'Autodesk Inventor', 'CAD', '3D Modelling', 'Biomedical', 'Sensors', 'Embedded Systems'],
       image: thermosleeveImg,
       year: '2022',
-    },
-    {
-      id: 'movement-classifier',
-      title: 'Movement Classifier',
-      description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
-      tags: ['Python', 'Machine Learning', 'Data Science', 'Human Activity Recognition'],
-      image: movementClassifierImg,
-      year: '2025',
     },
     {
       id: 'automatic-car',
       title: 'Engineering Competition Finalist: Miniature Automatic Car',
       description: 'Autonomous vehicle control and sensing project with embedded intelligence loops.',
-      tags: ['C++', 'Arduino', 'Robotics', 'Automation'],
+      tags: ['C++', 'Arduino', 'Robotics', 'Automation', 'Sensors', 'Embedded Systems'],
       image: automaticCarImg,
       year: '2024',
-    },
-    {
-      id: 'smart-home-assistant',
-      title: 'Smart Home Assistant',
-      description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
-      tags: ['Python', 'Raspberry Pi', 'AWS', 'Automation'],
-      image: smartHomeImg,
-      year: '2025',
     },
     {
       id: 'invoicemaker',
@@ -243,7 +243,7 @@ export function Home() {
           <h2 className="text-3xl tracking-tight mb-8">About</h2>
           <div className="space-y-6 text-[var(--muted-foreground)] leading-relaxed">
             <p>
-              Goal-driven engineering student seeking a position to leverage research and software skills to study how engineering concepts can make an impact on people's lives. Always eager to learn and looking for opportunities to develop new skills.
+            Engineering student with hands-on experience in post-silicon validation, embedded systems, and test automation across high-performance GPUs and autonomous robotics. Passionate about scalable hardware-softwareintegration and consumer-centric solutions driven by early exposure to marketing. Recognized for automation leadership at AMD and competitive hardware design at McMaster.
             </p>
           </div>
 
