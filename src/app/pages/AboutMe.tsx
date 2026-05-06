@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { StarField } from '../components/StarField';
 import { SectionContainer } from '../components/SectionContainer';
 import { CursorTrail } from '../components/CursorTrail';
+import taekwondoImg from '../../imports/taekwondo-team.png';
+import musicImg from '../../imports/music-production.png';
 
 export function AboutMe() {
   const navigate = useNavigate();
@@ -14,28 +16,16 @@ export function AboutMe() {
 
   const interests = [
     {
-      title: 'Software Engineering',
-      description: 'Building practical systems in Python and C/C++ with a focus on automation, data workflows, and reliable implementation.',
+      title: 'Taekwondo',
+      description: 'Active with the McMaster Taekwondo Team and motivated by disciplined training, teamwork, and competition.',
     },
     {
-      title: 'Embedded Systems',
-      description: 'Developing Raspberry Pi and Arduino-based prototypes that bridge software control with real-world sensing and actuation.',
+      title: 'Running',
+      description: 'Training for endurance events, with a focus on long-distance goals including the Toronto Waterfront Marathon 2025.',
     },
     {
-      title: 'Biomedical Engineering',
-      description: 'Designing assistive and health-focused technology informed by user needs, research, and measurable outcomes.',
-    },
-    {
-      title: 'Data & Machine Learning',
-      description: 'Applying data science and Machine Learning methods to classification, optimization, and performance analysis problems.',
-    },
-    {
-      title: 'Digital Marketing',
-      description: 'Using data-backed experimentation and campaign strategy to improve engagement and conversion outcomes.',
-    },
-    {
-      title: 'Technical Communication',
-      description: 'Translating complex engineering concepts into clear documentation, reports, and stakeholder-ready narratives.',
+      title: 'Music Production',
+      description: 'Producing and sharing original music projects as Alkami Music.',
     },
   ];
 
@@ -109,7 +99,7 @@ export function AboutMe() {
 
             <div className="mb-16">
               <h2 className="text-3xl tracking-tight mb-12 text-center">Multidisciplinary Interests</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 {interests.map((interest, i) => (
                   <div
                     key={i}
@@ -122,6 +112,46 @@ export function AboutMe() {
                     </p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="mb-16">
+              <h2 className="text-3xl tracking-tight mb-6 text-center">Outside of Work</h2>
+              <p className="text-[var(--muted-foreground)] leading-relaxed text-center max-w-3xl mx-auto mb-10">
+                Outside engineering, I spend most of my time in three areas: Taekwondo with the McMaster Taekwondo Team, distance running with a goal toward the Toronto Waterfront Marathon 2025, and music production through my Alkami Music channel.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="border border-[var(--border)] p-4 bg-[var(--cosmos-panel)]" style={{ borderRadius: '2px' }}>
+                  <img
+                    src={taekwondoImg}
+                    alt="McMaster Taekwondo Team competition moment"
+                    className="w-full h-72 object-cover mb-4"
+                    style={{ borderRadius: '2px' }}
+                  />
+                  <p className="text-sm text-[var(--muted-foreground)]">
+                    Taekwondo competition day with the McMaster Taekwondo Team.
+                  </p>
+                </div>
+                <div className="border border-[var(--border)] p-4 bg-[var(--cosmos-panel)]" style={{ borderRadius: '2px' }}>
+                  <img
+                    src={musicImg}
+                    alt="Music production setup"
+                    className="w-full h-72 object-cover mb-4"
+                    style={{ borderRadius: '2px' }}
+                  />
+                  <p className="text-sm text-[var(--muted-foreground)]">
+                    Music production setup for Alkami Music. Listen on{' '}
+                    <a
+                      href="https://www.youtube.com/@AlkamiMusic"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--glow-blue)] hover:underline"
+                    >
+                      YouTube
+                    </a>
+                    .
+                  </p>
+                </div>
               </div>
             </div>
 

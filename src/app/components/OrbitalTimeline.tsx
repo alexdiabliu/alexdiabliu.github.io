@@ -19,28 +19,24 @@ const planetData = [
     baseColor: '#d4d4d8',
     gradientColors: ['#f0f0f0', '#c0c0c0', '#a8a8a8'],
     borderColor: '#e0e0e0',
-    startYear: '2018',
   },
   {
     name: 'Venus',
     baseColor: '#e8c285',
     gradientColors: ['#ffd966', '#e8c285', '#d4a574'],
     borderColor: '#f5d99f',
-    startYear: '2021',
   },
   {
     name: 'Earth',
     baseColor: '#4a9eff',
     gradientColors: ['#7bc8f5', '#4a9eff', '#3d8dd9'],
     borderColor: '#5fa8ff',
-    startYear: '2022',
   },
   {
     name: 'Mars',
     baseColor: '#ff8586',
     gradientColors: ['#ffb0b0', '#ff8586', '#d45842'],
     borderColor: '#ffa5a6',
-    startYear: '2024',
   },
 ];
 
@@ -120,8 +116,8 @@ function PlanetNode({
             </>
           )}
 
-          <span className="relative z-10 font-mono text-xs" style={{ color: planet.name === 'Earth' ? '#fff' : '#000' }}>
-            {planet.startYear}
+          <span className="relative z-10 font-mono text-[10px] leading-tight text-center px-1" style={{ color: planet.name === 'Earth' ? '#fff' : '#000' }}>
+            {experience.year}
           </span>
         </motion.div>
 
@@ -206,10 +202,10 @@ export function OrbitalTimeline({ experiences }: OrbitalTimelineProps) {
             <div className="absolute bottom-4 left-4 w-4 h-4 rounded-full bg-red-600 opacity-40" />
             <div className="absolute top-1/2 left-1/3 w-2 h-2 rounded-full bg-orange-300 opacity-60" />
 
-            <span className="relative z-10 font-mono text-sm text-white">2018</span>
+            <span className="relative z-10 font-mono text-sm text-white">2003</span>
           </motion.div>
           <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-xs text-[var(--muted-foreground)]">
-            Origin
+            2003
           </div>
         </div>
 

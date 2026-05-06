@@ -8,6 +8,14 @@ import { PortfolioFilter } from '../components/PortfolioFilter';
 import { OrbitalTimeline } from '../components/OrbitalTimeline';
 import { CursorTrail } from '../components/CursorTrail';
 import logoSrc from '../../imports/logo.png';
+import resumePdf from '../../imports/2026_Hardware_Resume.pdf';
+import thermosleeveImg from '../../imports/project-thermosleeve.jpg';
+import spatialMappingImg from '../../imports/project-spatial-mapping.png';
+import smartHomeImg from '../../imports/project-smart-home.jpg';
+import gpuImg from '../../imports/project-gpu.png';
+import automaticCarImg from '../../imports/project-automatic-car.png';
+import invoicemakerImg from '../../imports/project-invoicemaker.png';
+import movementClassifierImg from '../../imports/project-movement-classifier.png';
 import { motion } from 'motion/react';
 
 export function Home() {
@@ -25,7 +33,6 @@ export function Home() {
       const navHeight = 72;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - navHeight;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth',
@@ -35,12 +42,12 @@ export function Home() {
 
   const projects = [
     {
-      id: 'thermosleeve',
-      title: 'ThermoSleeve',
-      description: 'Wearable neuromuscular therapy concept combining hardware and software biosignals.',
-      tags: ['Python', 'Raspberry Pi', 'Biomedical', 'Embedded Systems'],
-      image: '/Old/images/thermosleeve.jpg',
-      year: '2022',
+      id: 'gpu-performance-metrics',
+      title: 'GPU Temperature and Performance Optimization Analysis',
+      description: 'Determining optimal performance-to-power efficiency given temperature constraints in high-performance GPUs.',
+      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU'],
+      image: gpuImg,
+      year: '2024',
       featured: true,
     },
     {
@@ -48,23 +55,23 @@ export function Home() {
       title: 'Embedded 3D Spatial Mapping System',
       description: 'Real-time embedded system for spatial mapping and environment reconstruction workflows.',
       tags: ['Embedded C', 'Python', 'Robotics', 'Arm Cortex-M4'],
-      image: '/Old/images/simu.png',
+      image: spatialMappingImg,
       year: '2024',
     },
     {
-      id: 'smart-home-assistant',
-      title: 'Smart Home Assistant',
-      description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
-      tags: ['Python', 'Raspberry Pi', 'AWS', 'Automation'],
-      image: '/Old/images/jarvis.jpg',
-      year: '2024',
+      id: 'thermosleeve',
+      title: 'ThermoSleeve',
+      description: 'Wearable neuromuscular therapy concept combining hardware and software biosignals.',
+      tags: ['Python', 'Raspberry Pi', 'Biomedical', 'Embedded Systems'],
+      image: thermosleeveImg,
+      year: '2022',
     },
     {
-      id: 'gpu-performance-metrics',
-      title: 'GPU Temperature and Performance Optimization Analysis',
-      description: 'Determining optimal performance-to-power efficiency given temperature constraints in high-performance GPUs.',
-      tags: ['Python', 'Machine Learning', 'Optimization', 'GPU'],
-      image: '/Old/images/gpu.png',
+      id: 'movement-classifier',
+      title: 'Movement Classifier',
+      description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
+      tags: ['Python', 'Machine Learning', 'Data Science', 'Human Activity Recognition'],
+      image: movementClassifierImg,
       year: '2024',
     },
     {
@@ -72,7 +79,15 @@ export function Home() {
       title: 'Engineering Competition Finalist: Miniature Automatic Car',
       description: 'Autonomous vehicle control and sensing project with embedded intelligence loops.',
       tags: ['C++', 'Arduino', 'Robotics', 'Automation'],
-      image: '/Old/images/car.png',
+      image: automaticCarImg,
+      year: '2024',
+    },
+    {
+      id: 'smart-home-assistant',
+      title: 'Smart Home Assistant',
+      description: 'Automation-oriented smart home assistant integrating voice and device orchestration.',
+      tags: ['Python', 'Raspberry Pi', 'AWS', 'Automation'],
+      image: smartHomeImg,
       year: '2024',
     },
     {
@@ -80,46 +95,38 @@ export function Home() {
       title: 'InvoiceMaker',
       description: 'Invoice generation web tool for streamlined billing workflows and export automation.',
       tags: ['Python', 'Automation'],
-      image: '/Old/images/invoice.png',
-      year: '2024',
-    },
-    {
-      id: 'movement-classifier',
-      title: 'Movement Classifier',
-      description: 'Human movement classification model and pipeline for sensor-driven activity prediction.',
-      tags: ['Python', 'Machine Learning', 'Data Science', 'Human Activity Recognition'],
-      image: '/Old/images/har.png',
+      image: invoicemakerImg,
       year: '2024',
     },
   ];
 
   const experience = [
     {
-      role: 'GPU Validation Engineer',
-      company: 'Advanced Micro Devices (AMD)',
-      year: 'MAY 2023—PRESENT',
-      description: 'Developed customizable automated virtualization test cases for the MI300 Data Centre chip and added specific features to optimize their execution. Automated the implementation of machine learning models and training scripts on virtual machines with docker.',
+      role: 'Web Programmer',
+      company: 'Werrv Inc.',
+      year: '2022',
+      description: 'Incorporated scarcity marketing into the Werrv website by editing product display quantity with conditional activation based on various parameters.',
       index: 0,
-    },
-    {
-      role: 'Data Visualization Engineer',
-      company: 'Hermes Aerospace Corp.',
-      year: 'JAN 2023—APR 2023',
-      description: 'Utilized Python to retrieve, clean and efficiently segment raw drone data. Created a powerful dashboard-style program with 3D visualization of retrieved data.',
-      index: 1,
     },
     {
       role: 'Software Programmer',
       company: 'LinkClicks',
-      year: 'JUN 2022—SEP 2022',
+      year: '2022',
       description: 'Developed an API that connects from LinkedIn to the company website as part of an all-inclusive ads manager, including authorization and campaign management.',
+      index: 1,
+    },
+    {
+      role: 'Data Visualization Engineer',
+      company: 'Hermes Aerospace Corp.',
+      year: '2023',
+      description: 'Utilized Python to retrieve, clean and efficiently segment raw drone data. Created a powerful dashboard-style program with 3D visualization of retrieved data.',
       index: 2,
     },
     {
-      role: 'Web Programmer',
-      company: 'Werrv Inc.',
-      year: 'JUN 2022—AUG 2022',
-      description: 'Incorporated scarcity marketing into the Werrv website by editing product display quantity with conditional activation based on various parameters.',
+      role: 'GPU Validation Engineer',
+      company: 'Advanced Micro Devices (AMD)',
+      year: '2023—2024',
+      description: 'Developed customizable automated virtualization test cases for the MI300 Data Centre chip and added specific features to optimize their execution. Automated the implementation of machine learning models and training scripts on virtual machines with docker.',
       index: 3,
     },
   ];
@@ -183,7 +190,7 @@ export function Home() {
 
             <div className="flex items-center gap-6">
               <a
-                href="/resume.pdf"
+                href={resumePdf}
                 download="Alexander_Diab-Liu_Resume.pdf"
                 className="flex items-center gap-2 text-sm tracking-wider uppercase text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -331,7 +338,7 @@ export function Home() {
               alexdiabliu@gmail.com
             </a>
             <a
-              href="https://www.linkedin.com/in/alexdiab-liu/"
+              href="https://www.linkedin.com/in/alexdiabliu/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--muted-foreground)] hover:text-[var(--glow-blue)] transition-colors"

@@ -5,6 +5,13 @@ import { StarField } from '../components/StarField';
 import { SectionContainer } from '../components/SectionContainer';
 import { ProjectCarousel } from '../components/ProjectCarousel';
 import { CursorTrail } from '../components/CursorTrail';
+import thermosleeveImg from '../../imports/project-thermosleeve.jpg';
+import spatialMappingImg from '../../imports/project-spatial-mapping.png';
+import smartHomeImg from '../../imports/project-smart-home.jpg';
+import gpuImg from '../../imports/project-gpu.png';
+import automaticCarImg from '../../imports/project-automatic-car.png';
+import invoicemakerImg from '../../imports/project-invoicemaker.png';
+import movementClassifierImg from '../../imports/project-movement-classifier.png';
 
 interface Project {
   title: string;
@@ -30,7 +37,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Logged symptom history for user and physician review',
       'Produced complete design assets including CAD and engineering documentation',
     ],
-    images: ['/Old/images/thermosleeve.jpg', '/Old/thermosleeve-images/thermocover.png'],
+    images: [thermosleeveImg],
   },
   'spatial-mapping': {
     title: 'Embedded 3D Spatial Mapping System',
@@ -46,7 +53,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Documented architecture and reproducible setup for future extensions',
       'Established a foundation for navigation and SLAM-adjacent experiments',
     ],
-    images: ['/Old/images/simu.png'],
+    images: [spatialMappingImg],
   },
   'smart-home-assistant': {
     title: 'Smart Home Assistant',
@@ -62,7 +69,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Created an extendable automation architecture for new routines',
       'Documented setup and architecture for reproducible deployment',
     ],
-    images: ['/Old/images/jarvis.jpg'],
+    images: [smartHomeImg],
   },
   'gpu-performance-metrics': {
     title: 'GPU Temperature and Performance Optimization Analysis',
@@ -78,7 +85,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Produced benchmark-driven optimization recommendations',
       'Improved clarity of performance bottlenecks in parallel workloads',
     ],
-    images: ['/Old/images/gpu.png'],
+    images: [gpuImg],
   },
   'automatic-car': {
     title: 'Engineering Competition Finalist: Miniature Automatic Car',
@@ -94,7 +101,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Improved responsiveness with lightweight decision logic',
       'Reached finalist-level quality in engineering competition context',
     ],
-    images: ['/Old/images/car.png'],
+    images: [automaticCarImg],
   },
   invoicemaker: {
     title: 'InvoiceMaker',
@@ -110,7 +117,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Enabled repeatable billing workflows for faster turnaround',
       'Provided maintainable foundation for additional automation features',
     ],
-    images: ['/Old/images/invoice.png'],
+    images: [invoicemakerImg],
   },
   'movement-classifier': {
     title: 'Movement Classifier',
@@ -126,7 +133,7 @@ const projectData: Record<string, Project & { fullDescription: string; challenge
       'Built an end-to-end data processing and evaluation pipeline',
       'Established a framework for future HAR model improvements',
     ],
-    images: ['/Old/images/har.png'],
+    images: [movementClassifierImg],
   },
 };
 
